@@ -6,11 +6,27 @@
     <title>Document</title>
 </head>
 <body>
-    <p id="demo"></p>
+    
+    <h1>DOM Methods</h1>
+
+    <h2>1.getElementById Method</h2>
+    <input type="button" value="By ID" onclick="getElementById()">
+
+    <h2>2.getElementsByClassName Method</h2>
+    <input type="button" value="By Class" onclick="getElementByClass()">
+
+    <p id="demoid" class="democlass"></p>
     
 </body>
 <script>
-    document.getElementById("demo").innerHTML="This is the Javascript 1st Dom Program"
-    
+    const getElementById = () => {
+        let x = document.getElementById("demoid");
+        x.innerHTML = "This content we get by getElementById method";
+    }
+
+    const getElementByClass = () => {
+        let x = document.getElementsByClassName("democlass")[0];
+        x.innerHTML = "This content we get by getElementsByclassName method";
+    }
 </script>
 </html>
