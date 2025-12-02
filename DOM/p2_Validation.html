@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1>Validation Form</h1>
+    </div>
+    <form name="form1">
+        First Name:<input type = "text" name="fname" id = "fname"><br/><br/>
+        Last Name:<input type = Text name="lname" id="lname"><br/><br/>
+        Contact : <input type="Text" name="contact" id="contact"><br/><br/>
+        Address : <input type="Text" name="address" id="address"><br/><br/>
+        <input type="button" value="Validate" onclick="validateform()"><br/><br/>
+    </form>
+    <div id="label_output"></div>
+    
+</body>
+<script>
+    const fname_Validate = ()=>{
+        let x = document.forms["form1"]["fname"].value.trim();
+        label_output = document.getElementById("label_output"); 
+        if (x ===""){
+            alert("First Name Required");
+            label_output.innerHTML += "First Name Required<br/>"      
+        }
+        else if(typeof x !="string"){
+            alert("First Name must be in string")
+           
+            label_output.value += "First Name must be in string<br/>"
+        }
+    }
+    const lname_validate = () =>{
+        let x = document.forms["form1"]["lname"].value.trim();
+        label_output = document.getElementById("label_output");
+        if (x ===""){
+            alert("Last Name Required")
+            label_output.value += "Last Name Required<br/>"    
+        }
+        else if(typeof x !="string"){
+            alert("Last Name must be in string")
+            label_output.innerHTML += "Last Name must be in string<br/>"
+        }
+    }
+    const validateform = ()=>{
+        label_output = document.getElementById("label_output");
+        label_output.innerHTML += ""
+        fname_Validate()
+        lname_validate()
+
+
+
+    }
+</script>
+</html>
