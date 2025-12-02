@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parent-Child Styling</title>
+</head>
+<body>
+    <h1>Parent's_child_styling using query selector method</h1>
+    <div class="parent">
+        <div class="day">Sunday</div>
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+        <div class="day">Friday</div>
+        <div class="day">Saturday</div>
+    </div>
+
+    
+</body>
+<script>
+    const editStyle = () =>{
+        const parent = document.querySelector('.parent');
+        for(let index = 0; index < parent.children.length;index++){
+            if (parent.children[index].innerText == 'Thursday'){
+                parent.children[index].style.color = "blue";
+            }
+            else{
+                parent.firstElementChild.style.color = "orange";
+                parent.lastElementChild.style.color = "green";
+            }
+        }
+        
+    }
+    editStyle()
+
+</script>
+</html>
