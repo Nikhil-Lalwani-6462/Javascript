@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add_Edit_Remove</title>
+</head>
+<body>
+<h1>Add, Edit, Remove</h1>
+<div class="main">
+    <li>Javascript</li>
+    
+</div>
+    
+</body>
+<script>
+    const addlanguage = (langname)=>{
+        const language = document.createElement('li');
+        language.appendChild(document.createTextNode(langname));
+        const div = document.querySelector('.main')
+        div.appendChild(language)
+        }
+
+        addlanguage('Python');
+        addlanguage('C#');
+        addlanguage('Java');
+
+
+    const editlanguage = (name)=>{
+        const selectedValue = document.querySelector('li:nth-child(2)');
+        const newValue = document.createElement('li');
+        newValue.textContent=name;
+        selectedValue.replaceWith(newValue);
+    }
+
+    editlanguage('Mojo');
+
+    const removelanguage = ()=>{
+        const selectValue = document.querySelector('li:last-child');
+        selectValue.remove();
+    }
+
+
+</script>
+</html>
